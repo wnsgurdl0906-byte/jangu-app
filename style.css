@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fdfaf5;
+    font-family: "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#sound-display {
+    font-size: 3.5rem;
+    font-weight: 900;
+    height: 4.5rem;
+    color: #4e342e;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.1);
+    /* 퍼포먼스 모드: 복잡한 transition 제거, 즉시 변경 */
+    transition: none; 
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#janggu-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+}
+
+#janggu-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 160px;
+    background: linear-gradient(to bottom, #5d4037, #8d6e63, #5d4037);
+    border-radius: 50% / 20%;
+    z-index: 1;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.drum-head {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #fffdf0 0%, #f5ead1 60%, #e3d5b8 100%);
+    border: 12px solid #d7ccc8;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #a1887f;
+    cursor: pointer;
+    z-index: 2;
+    /* 퍼포먼스 모드: 부드러운 애니메이션 대신 즉각적인 피드백 */
+    transition: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15), inset 0 0 15px rgba(0,0,0,0.05);
+}
+
+#left-side, #right-side {
+    margin: 0;
+}
+
+.drum-head.hit {
+    transform: scale(0.95);
+    background: radial-gradient(circle, #ffffff 0%, #f5ead1 50%, #d7ccc8 100%);
+}
+
+#guide {
+    margin-top: 3rem;
+    color: #8d6e63;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    background: rgba(255,255,255,0.6);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
